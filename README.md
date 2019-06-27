@@ -2,7 +2,16 @@
 
 #### 一个简单的小程序开发手脚架工具
 
-> 目前支持
+> 使用方法
+
+##### 暂不支持windows cmd运行
+
++ 将小程序代码放入miniprogram目录下
++ 执行`npm start`
+
++ 可以使用`npm run commit`提交
+
+> 已支持
 
 - 小程序npm自动构建
 
@@ -14,11 +23,5 @@
 
 - 标准化的commit message提交
 
-> 使用方法
-
-+ 将小程序代码放入miniprogram目录下
-+ 执行npm start
-
-+ 可以使用npm run commit提交
 
 > 持续补充其他功能
