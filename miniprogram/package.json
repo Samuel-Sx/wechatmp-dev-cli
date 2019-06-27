@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd ../ && npm start"
+    "start": "cd ../ && npm start",
+    "commit": "cd ../ && npm run commit"
   },
   "keywords": [],
   "author": "",
