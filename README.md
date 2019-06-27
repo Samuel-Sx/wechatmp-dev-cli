@@ -12,9 +12,13 @@
 
 - autoprefixer
 
+- 标准化的commit message提交
+
 > 使用方法
 
 + 将小程序代码放入miniprogram目录下
 + 执行npm start
+
++ 可以使用npm run commit提交
 
 > 持续补充其他功能
