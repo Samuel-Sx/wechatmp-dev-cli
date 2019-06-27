@@ -40,7 +40,7 @@ module.exports = function () {
     /** 存在npm组件，但是没有node_modules包 */
     if (packages && !fs.existsSync(moduleDir)) {
         console.log(`>start install packages...\n\n`)
-        child_process.execSync(`cd ${rootpath} && cnpm i`, (error, stdout, stderr) => {
+        child_process.execSync(`cd ${rootpath} && npm i`, (error, stdout, stderr) => {
             console.dir(stdout);
         });
     }
