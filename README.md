@@ -14,7 +14,7 @@
 
 >+ 可以使用`npm run commit`提交
 
-##### `暂不支持windows cmd运行`
+##### `暂不支持cmd运行`
 
 > 已支持
 
