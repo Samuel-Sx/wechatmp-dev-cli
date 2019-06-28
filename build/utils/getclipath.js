@@ -5,7 +5,9 @@ const fs = require('fs');
 const rootpath = path.join(__dirname, '../../miniprogram');
 
 module.exports = function (...args) {
-    args.push(rootpath);
+    if(args.indexOf('--quit') === -1){
+        args.push(rootpath);
+    }
     let result = {
         code: -1,
         params: [],

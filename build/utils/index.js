@@ -1,3 +1,3 @@
 module.exports.projectConfig = require('./getconfig');
-module.exports.devToolPath = require('./getcommand');
-module.exports.weakupDevTool = require('./weakup');
+module.exports.runCliCommand = require('./cliexecute');
+module.exports.jsonFileHandle = require('./jsonfilehandle')

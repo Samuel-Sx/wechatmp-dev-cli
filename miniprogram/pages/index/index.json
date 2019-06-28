@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "l-ion": "/miniprogram_npm/lin-ui/icon/index"
+  }
 }
