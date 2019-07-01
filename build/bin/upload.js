@@ -45,7 +45,7 @@ const inputVersion = () => inquirer.prompt(inputversion);
 const inputDesc = () => inquirer.prompt(inputdesc);
 
 const uploadProject = async function (uploadConf) {
-    let stdout = await runCliCommand(`-u ${uploadConf.version}@${projectPath} --upload-desc '${uploadConf.desc}'`)
+    let stdout = await runCliCommand('-u', uploadConf.version+'@'+projectPath, '--upload-desc', uploadConf.desc)
     if (stdout.code !== 0) {
         console.log(stdout)
     } else {

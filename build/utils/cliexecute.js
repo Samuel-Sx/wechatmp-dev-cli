@@ -11,6 +11,9 @@ const runCliCommand = function (platform, path, filename, params) {
         runFunc = child_process.exec;
         funcParam = [command]
     } else if (platform === 'win') {
+        if(params.includes('-u')){
+            params.pop();
+        }
         command = `${path}${filename}`;
         runFunc = child_process.execFile;
         funcParam = [command, params];
