@@ -4,7 +4,7 @@ const path = require('path');
 const rootpath = path.join(__dirname, '../../miniprogram');
 
 module.exports = function (...args) {
-    if(args.indexOf('--quit') === -1 || args.indexOf('-u') === -1){
+    if(args[0].indexOf('--quit') === -1 || args[0].indexOf('-u') === -1){
         args.push(rootpath);
     }
     let result = {
