@@ -51,6 +51,7 @@ module.exports = async function (...args) {
                 let index = error.match(/\"\{/);
                 index = index ? index.index : null;
                 if (index) {
+                    console.log(error)
                     let errobj = JSON.parse(JSON.parse([].slice.call(error, index, error.length).join('')))
                     results = {
                         code: errobj.code,
