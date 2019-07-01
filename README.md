@@ -20,7 +20,9 @@
 
 > 已支持
 
-- 打开开发工具时，进行npm自动构建
+- `npm start` 运行开发工具时，自动检测并构建npm依赖包
+
+- `npm run upload` 上传项目
 
 - 使用less编写样式文件，实时编译为.wxss样式文件
 
@@ -28,7 +30,6 @@
 
 - 标准化的commit message提交
 
-- `npm run upload` 上传项目
 
 
 > 持续补充其他功能
