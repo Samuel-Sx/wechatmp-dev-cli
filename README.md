@@ -6,7 +6,7 @@
 
 >+ 安装微信开发者工具(RC 开发版)
 
->+ windows 系统需要在 `autoBuildConfig.json` 文件中填写开发者工具安装路径
+>+ windows 系统需要在 `autoBuildConfig.json` 文件中填写开发者工具安装路径 (注意：开发者工具安装路径中不能存在空格，否则部分功能将无法使用)
 
 >+ 打开开发者工具，登录并开启服务端口  `(服务端口位置：设置 -> 安全设置 -> 安全)`
 
@@ -27,6 +27,8 @@
 - autoprefixer
 
 - 标准化的commit message提交
+
+- `npm run upload` 上传项目
 
 
 > 持续补充其他功能
