@@ -11,6 +11,9 @@ const runCliCommand = function (platform, path, filename, params) {
         runFunc = child_process.exec;
         funcParam = [command]
     } else if (platform === 'win') {
+        if(params.includes('-u')){
+            params.pop();
+        }
         command = `${path}${filename}`;
         runFunc = child_process.execFile;
         funcParam = [command, params];
@@ -51,6 +54,7 @@ module.exports = async function (...args) {
                 let index = error.match(/\"\{/);
                 index = index ? index.index : null;
                 if (index) {
+                    console.log(error)
                     let errobj = JSON.parse(JSON.parse([].slice.call(error, index, error.length).join('')))
                     results = {
                         code: errobj.code,
