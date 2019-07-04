@@ -41,8 +41,9 @@ const CopyToLibs = function (dirpath) {
     child_process.execSync(`cd ${ProjectPath} && mkdir libs`)
   }
   return function (filename, content) {
-    if (!isset(`${dirpath}/${filename}`)) {
-      fs.writeFileSync(`${dirpath}/${filename}`, content)
+    let fullpath = process.platform === 'win32' ? `${dirpath}\\${filename}` : `${dirpath}/${filename}`
+    if (!isset(fullpath)) {
+      fs.writeFileSync(fullpath, content)
     }
   }
 }
@@ -51,7 +52,7 @@ const inject = function () {
   let redux = FileFormating(ReduxFile);
   let reduxThunk = FileFormating(ReduxThunkFile);
   if (redux && reduxThunk) {
-    let dirpath = process.platform === 'win32' ? ProjectPath + '\libs' : ProjectPath + '/libs'
+    let dirpath = process.platform === 'win32' ? ProjectPath + '\\libs' : ProjectPath + '/libs'
     CopyToLibs(dirpath)(`redux.js`, redux);
     CopyToLibs(dirpath)(`redux-thunk.js`, reduxThunk);
   }
