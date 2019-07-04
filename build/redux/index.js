@@ -4,7 +4,7 @@ const child_process = require('child_process');
 
 const ReduxFile = path.join(__dirname, '../../node_modules/redux/dist/redux.js');
 const ReduxThunkFile = path.join(__dirname, '../../node_modules/redux-thunk/dist/redux-thunk.js');
-const ProjectPath = path.join(__dirname, '../../miniprogram/');
+const ProjectPath = path.join(__dirname, '../../miniprogram');
 /**
  * 检查文件是否存在
  * @param {string} path 需要检查的文件/目录路径
@@ -38,10 +38,7 @@ const FileFormating = function (filepath) {
  */
 const CopyToLibs = function (dirpath) {
   if (!isset(dirpath)) {
-    child_process.execSync(`
-            cd ${ProjectPath} &&
-            mkdir libs
-        `, { encoding: 'string' })
+    child_process.execSync(`cd ${ProjectPath} && mkdir libs`)
   }
   return function (filename, content) {
     if (!isset(`${dirpath}/${filename}`)) {
@@ -54,8 +51,9 @@ const inject = function () {
   let redux = FileFormating(ReduxFile);
   let reduxThunk = FileFormating(ReduxThunkFile);
   if (redux && reduxThunk) {
-    CopyToLibs(`${ProjectPath}/libs`)(`redux.js`, redux);
-    CopyToLibs(`${ProjectPath}/libs`)(`redux-thunk.js`, reduxThunk);
+    let dirpath = process.platform === 'win32' ? ProjectPath + '\libs' : ProjectPath + '/libs'
+    CopyToLibs(dirpath)(`redux.js`, redux);
+    CopyToLibs(dirpath)(`redux-thunk.js`, reduxThunk);
   }
 }
 module.exports = inject;
