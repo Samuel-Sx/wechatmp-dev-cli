@@ -14,6 +14,8 @@
 
 >+ 在根目录运行 `npm start`
 
+>+ 如果需要使用 `redux` 作为状态管理工具，可以在根目录下运行 `npm run redux`
+
 >+ 可以使用 `npm run commit` 提交
 
 ##### `暂不支持cmd运行`
@@ -23,6 +25,8 @@
 - `npm start` 运行开发工具时，自动检测并构建npm依赖包
 
 - `npm run upload` 上传项目
+
+- `npm run redux` 添加redux。将会在项目libs目录下，写入redux/redux-thunk依赖文件
 
 - 使用less编写样式文件，实时编译为.wxss样式文件
 
